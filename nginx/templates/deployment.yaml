@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: nginx-argocd
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: nginx
+      app: nginx-helm
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx-helm
     spec:
       containers:
         - name: nginx
